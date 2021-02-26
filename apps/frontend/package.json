@@ -14,15 +14,17 @@
   "author": "Sergey Kashirin",
   "license": "ISC",
   "dependencies": {
-    "copy-webpack-plugin": "^6.2.1",
-    "html-webpack-plugin": "4.0.4",
-    "react-app-polyfill": "1.0.6",
-    "react-app-rewired": "2.1.5",
-    "react-scripts": "3.4.1",
     "@babel/preset-env": "7.7.1",
     "@babel/register": "7.7.0",
+    "copy-webpack-plugin": "^6.2.1",
+    "html-webpack-plugin": "4.0.4",
+    "mobx": "^6.1.7",
+    "mobx-react": "^7.1.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-app-polyfill": "1.0.6",
+    "react-app-rewired": "2.1.5",
+    "react-dom": "17.0.1",
+    "react-scripts": "3.4.1"
   },
   "browserslist": {
     "production": [
