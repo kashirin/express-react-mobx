@@ -1,0 +1,11 @@
+#запуск билда фронта или установка модулей в консоле
+version: "2"
+services:
+  mobxapp-back-mtc:
+    image: node:14.15.4-alpine
+    volumes:
+      - ../apps/backend:/code
+    ##command: sh -c "cd /code/ && yarn frontend-build"
+    command: tail -f /dev/null
+        
+    

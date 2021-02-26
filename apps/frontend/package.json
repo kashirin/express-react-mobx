@@ -1,0 +1,39 @@
+{
+  "name": "frontend-mobx",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": ".",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "frontend-start": "react-app-rewired start",
+    "frontend-build": "GENERATE_SOURCEMAP=false react-app-rewired build",
+    "frontend-check-build": "GENERATE_SOURCEMAP=false react-app-rewired build --config-overrides config-overrides-check.js"
+  },
+  "author": "Sergey Kashirin",
+  "license": "ISC",
+  "dependencies": {
+    "copy-webpack-plugin": "^6.2.1",
+    "html-webpack-plugin": "4.0.4",
+    "react-app-polyfill": "1.0.6",
+    "react-app-rewired": "2.1.5",
+    "react-scripts": "3.4.1",
+    "@babel/preset-env": "7.7.1",
+    "@babel/register": "7.7.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
