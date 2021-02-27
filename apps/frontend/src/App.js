@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import {getProfile, saveProfile} from "./helpers/ApiService"
 
-import RootStore from './stores/RootStore'
 
-import Dashboard from './components/Dashboard'
+//import Dashboard from './components/Dashboard'
+import Dashboard2 from './components/Dashboard2'
+import WidgetMyMessages from './components/WidgetMyMessages'
+import Refresher from './components/Refresher'
+
+
 
 /*
 
@@ -29,11 +33,12 @@ class App extends Component {
 
     render() {
         return (
+            
             <div className="container-fluid">
-                <div className="row">
-                    <h2>Приложение: MobX</h2>
-                </div>
-                <Dashboard/>
+                 <Refresher/>
+                 <br/><br/>
+                 <Dashboard2/>
+                 <WidgetMyMessages/>
             </div>
             
         );

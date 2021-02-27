@@ -1,4 +1,4 @@
-import { makeAutoObservable, makeObservable, autorun, runInAction, observable, computed, action } from "mobx"
+import { makeAutoObservable, makeObservable, autorun, reaction, runInAction, observable, computed, action } from "mobx"
 
 import { getProfile, saveProfile } from "../helpers/ApiService"
 
@@ -22,12 +22,17 @@ export class ProfileStore {
     async saveProfile(profile) {
         this.isSaving = true
         await saveProfile(profile)
-        this.profile = profile
+        // read from server because of possible custom backen logic
+        await this.loadProfile()
         this.isSaving = false
     }
 
     get fioComplete() {
         return this.profile && this.profile.NAME && this.profile.SURNAME && this.profile.PATRONYMIC
+    }
+
+    get needFirstLoad() {
+        return (!this.loaded && !this.isLoading)
     }
     
 
@@ -39,10 +44,19 @@ export class ProfileStore {
             isSaving: observable,
             loaded: observable,
             fioComplete: computed,
+            needFirstLoad: computed,
             loadProfile: action,
             saveProfile: action
         })
         this._rootStore = rootStore
+
+        reaction(
+            () => this.isLoading,
+            (isLoading, prevIsLoading) => {
+               
+                console.log("reaction on profile store changed isloading",prevIsLoading,isLoading)
+            }
+        )
         
     }
 }

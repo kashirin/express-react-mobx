@@ -9,7 +9,7 @@ const Comp1 = observer( () => {
     useEffect(() => {
         console.log('Comp1 mounted');
 
-        if(!profileStore.loaded && !profileStore.isLoading){
+        if(profileStore.needFirstLoad){
             profileStore.loadProfile()
 
             setTimeout(()=>{

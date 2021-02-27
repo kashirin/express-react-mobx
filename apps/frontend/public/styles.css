@@ -1,0 +1,30 @@
+.widget_my_profile {
+    float: left;
+    width: 320px;
+    height: 200px;
+    padding: 10px 10px 10px 10px;
+    border: 1px dotted gray;
+    border-radius: 4px;
+    margin-left: 16px;
+}
+
+.widget_my_messages {
+    float: left;
+    width: 320px;
+    height: 320px;
+    padding: 10px 10px 10px 10px;
+    border: 1px dotted gray;
+    border-radius: 4px;
+    margin-left: 16px;
+}
+
+.like-link{
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid red;
+    color: red;
+}
+
+.redtext{
+    color: red;
+}

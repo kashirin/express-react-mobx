@@ -16,7 +16,8 @@ export const getMessages = (req, res) => {
 }
 
 export const addMessage = (req, res) => {
-    const msg = req.body;
+    let msg = req.body;
+    msg.id = ('n'+Math.random()).split('.').join('');
     if(msg){
         let data = []
         try{
