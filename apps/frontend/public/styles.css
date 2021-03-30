@@ -1,6 +1,6 @@
 .widget_my_profile {
     float: left;
-    width: 320px;
+    width: 360px;
     height: 200px;
     padding: 10px 10px 10px 10px;
     border: 1px dotted gray;
@@ -20,6 +20,12 @@
 
 .like-link{
     cursor: pointer;
+
+
+
+
+
+    
     font-weight: bold;
     border: 1px solid red;
     color: red;
@@ -27,4 +33,18 @@
 
 .redtext{
     color: red;
+}
+
+.red{
+    color: red;
+}
+
+.widget_field{
+    float: left;
+    width: 160px;
+    height: 60px;
+    padding: 10px 10px 10px 10px;
+    border: 1px dotted gray;
+    border-radius: 4px;
+    margin-left: 16px;
 }

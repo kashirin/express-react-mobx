@@ -1,4 +1,4 @@
-import { makeAutoObservable, makeObservable, autorun, runInAction, observable, computed, action } from "mobx"
+import { makeObservable, observable, computed, action } from "mobx"
 
 import { getMessages, addMessage } from "../helpers/ApiService"
 

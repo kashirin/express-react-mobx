@@ -20,7 +20,7 @@ const callUrl = (params) => async () => {
             headers: baseHeaders,
             body: body ? JSON.stringify(body) : null
         } )
-        if (response.status != 200) {
+        if (response.status !== 200) {
             return { error: NETWORK_ERR }
         }
         

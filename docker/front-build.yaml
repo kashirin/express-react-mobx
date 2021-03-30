@@ -1,5 +1,11 @@
 #запуск билда фронта или установка модулей в консоле
 version: "2"
+
+networks:
+  net-mobxapp:
+    external:
+      name: net-mobxapp
+
 services:
   mobxapp-front-builder:
     image: node:14.15.4-alpine
@@ -7,5 +13,9 @@ services:
       - ../apps/frontend:/code
     ##command: sh -c "cd /code/ && yarn frontend-build"
     command: tail -f /dev/null
+    ports:
+      - 3145:3145
+    networks:
+      - net-mobxapp
         
     

@@ -1,4 +1,4 @@
-import { makeAutoObservable, makeObservable, autorun, reaction, runInAction, observable, computed, action } from "mobx"
+import { makeObservable, reaction, observable, computed, action } from "mobx"
 
 import { getProfile, saveProfile } from "../helpers/ApiService"
 
@@ -34,16 +34,21 @@ export class ProfileStore {
     get needFirstLoad() {
         return (!this.loaded && !this.isLoading)
     }
+
+    get myname() {
+        return this.profile ? this.profile.NAME : null
+    }
     
 
     constructor (rootStore) {
         console.log('created ProfileStore');
         makeObservable(this, {
-            profile: observable.deep,
+            profile: observable.struct,
             isLoading: observable,
             isSaving: observable,
             loaded: observable,
             fioComplete: computed,
+            myname: computed,
             needFirstLoad: computed,
             loadProfile: action,
             saveProfile: action
@@ -55,6 +60,22 @@ export class ProfileStore {
             (isLoading, prevIsLoading) => {
                
                 console.log("reaction on profile store changed isloading",prevIsLoading,isLoading)
+            }
+        )
+
+        reaction(
+            () => this.profile,
+            (profile, prevProfile) => {
+               
+                console.log("reaction on profile store changed profile",prevProfile,profile)
+            }
+        )
+
+        reaction(
+            () => this.myname,
+            (name, prevName) => {
+               
+                console.log("reaction on profile store changed name",prevName,name)
             }
         )
         
